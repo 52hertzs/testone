@@ -6,6 +6,7 @@ import Router from 'vue-router'
 const HelloWorld = () => import('@/components/HelloWorld') 
 const MyTest = () => import('@/components/MyTest') 
 const MyRender = () => import('@/components/MyRender')  
+const MyTest01 = () => import('@/components/MyTest01')  
 Vue.use(Router)
 
 export default new Router({
@@ -22,6 +23,14 @@ export default new Router({
       path: '/render',
       name: 'render',
       component: MyRender,
+      meta: {
+        keepAlive: false   //判断是否缓存
+      }
+    },
+    {
+      path: '/mytest01',
+      name: 'mytest01',
+      component: MyTest01,
       meta: {
         keepAlive: false   //判断是否缓存
       }
